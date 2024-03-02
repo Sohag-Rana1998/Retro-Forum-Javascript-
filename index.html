@@ -12,26 +12,200 @@
   <!-- Tailwind and daisy UI link -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
-
+  <!-- Font Awesome -->
+  <script src="https://kit.fontawesome.com/355d7f7ac4.js" crossorigin="anonymous"></script>
 
 </head>
 
 <body>
   <header class="container mx-auto">
+    <nav>
+      <div class="navbar bg-base-100">
+        <div class=" flex-1">
+          <div class="dropdown">
+            <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
+              </svg>
+            </div>
+            <ul tabindex="0"
+              class=" text-base menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
+              <li><a title="Home"></a> <i class="fa-solid fa-house"></i></a></li>
+              <li>
+                <a title="edit"></a><i class="fa-solid fa-pen-to-square"></i></a>
+
+              </li>
+              <li><a title="add"></a><i class="fa-solid fa-user-plus"></i></a></li>
+              <li><a title="flag"></a><i class="fa-regular fa-flag"></i></a></li>
+
+            </ul>
+          </div>
+          <a class="btn btn-ghost text-2xl lg:text-4xl"><img src="./images/logo.png" alt=""></a>
+        </div>
+        <div class="navbar-center hidden lg:flex">
+          <ul class="menu menu-horizontal px-1 text-base">
+            <li><a class="rounded-full border-[1px] border-slate-400 mr-8 p-4 bg-slate-300" title="Home"> <i
+                  class="fa-solid fa-house"></i></a></li>
+            <li>
+              <a class="rounded-full border-[1px] border-slate-400 mr-8 p-4 bg-slate-300" title="edit">
+                <i class="fa-solid fa-pen-to-square"></i></a>
+
+            </li>
+            <li><a class="rounded-full border-[1px] border-slate-400 mr-8 p-4 bg-slate-300" title="add"><i
+                  class="fa-solid fa-user-plus"></i></a></li>
+
+            <li><a class="rounded-full border-[1px] border-slate-400 mr-8 p-4 bg-slate-300" title="flag"><i
+                  class="fa-regular fa-flag"></i></a></li>
+          </ul>
+        </div>
+        <div>
+          <a class="btn btn-primary bg-[#797DFC] border-none text-white">Sign In</a>
+        </div>
+      </div>
+    </nav>
 
 
 
 
+    <div class="container  mx-auto mt-14  ">
+      <div class=" rounded-3xl bg-gradient-to-r from-slate-900 to-gray-700 lg:h-[550px]">
+        <div class=" h-full bg-no-repeat bg-cover bg-center bg-[url(./images/bgbanner.png)]">
+          <div class="flex flex-col lg:flex-row justify-between items-center h-full px-24">
+            <div class="text-white mt-5 lg:mt-0">
+              <h1 class="text-6xl text-white font-extrabold font-munish">Welcome to the <br> <span
+                  class="text-indigo-500">ReTro</span>
+                Forum </h1>
+              <p class="py-12  text-lg font-inter font-inter"> Share your favorite opinion and win and wp <br> forum
+                coffee mug!</p>
 
-    <div>
+              <div class="relative">
+                <input id="search-field" class="p-3 w-full lg:w-[350px] text-inter rounded-xl text-black " type="text"
+                  placeholder="Search here anything">
+                <button class="btn absolute right-0  bg-[#797DFC]">Search</button>
+              </div>
 
+            </div>
+            <div class="bg-white w-full my-5  lg:h-[250px] lg:w-[300px] rounded-3xl">
+              <ul>
+                <div class="flex justify-between items-center px-8 pt-8">
+                  <li>Registered Users</li>
+                  <li>01</li>
+                </div>
+                <div class="flex justify-between items-center px-8 py-2 lg:py-4">
+                  <li>Forum</li>
+                  <li>05</li>
+                </div>
+                <div class="flex justify-between items-center px-8 py-2 lg:py-4">
+                  <li>Topics</li>
+                  <li>01</li>
+                </div>
+                <div class="flex justify-between items-center px-8 py-2 lg:py-4">
+                  <li>Replies</li>
+                  <li>01</li>
+                </div>
+
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </header>
-  <main class="container mx-auto">
-    <section>
 
-      Welcome AssignMent-06
+
+  <main class="container mx-auto">
+    <section class="w-full  mt-20 mb-14">
+      <div class="text-center">
+        <h1 class="text-black font-extrabold text-4xl font-mulish">Let’s Discuss</h1>
+        <p class="text-lg text-black font-inter mt-4">Yes, you can run unit tests and view the results directly within
+          the
+          app. The <br>
+          integrated testing features
+          allow for a
+          streamlined .</p>
+      </div>
+
+      <div id="card-container ">
+
+        <div class="flex flex-col mt-8 md:flex-row lg:flex-row  gap-5">
+          <div class="bg-[#797DFC1A] rounded-3xl">
+            <div class="flex p-10 gap-10">
+              <div class="avatar relative">
+                <div class="w-4 h-4 absolute top-[-4px] right-[-4px]  bg-green-600 rounded-full"></div>
+                <div class="w-20 h-20 rounded-xl">
+                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-start  gap-5 font-medium font-inter">
+                  <div>
+                    # Music
+                  </div>
+                  <div><span>Author :</span>
+                    Awlad Hossain
+                  </div>
+                </div>
+                <div class="font-mulish my-3 text-left font-bold text-xl">10 Kids Unaware of Their Halloween Costume
+                </div>
+                <p class="font-inter">It’s one thing to subject yourself to ha Halloween costume mishap because, hey
+                  that’s your prerogative</p>
+                <hr class="border-dashed border-[2px]  my-3">
+                <div class="flex mt-3 justify-between items-center">
+                  <div class="flex gap-4 justify-around">
+                    <div>
+                      <i class="fa-regular fa-message"></i> <span>560</span>
+                    </div>
+                    <div>
+                      <i class="fa-solid fa-eye"></i><span>1,568</span>
+                    </div>
+                    <div>
+                      <i class="fa-regular fa-clock"></i> <span>5 min</span>
+                    </div>
+                  </div>
+                  <div>
+                    <button class="py-1 px-2 rounded-full bg-green-600"><i class="fa-solid fa-envelope"></i></button>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+
+          <div id="readed-card-container" class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[35%]">
+
+
+            <div class="flex items-center justify-between mt-4 px-3">
+              <div class="font-mulish my-3 text-left font-bold text-xl">Title</div>
+
+              <div><i class="fa-solid fa-check-double"></i>
+                Mark as read <span>(4)</span>
+              </div>
+
+            </div>
+            <div class="px-3">
+              <div class="flex my-4  mx-auto rounded-xl pl-2 py-2 justify-between bg-white">
+                <div class="font-mulish my-3 text-left font-bold text-xl">10 Kids Unaware of Their Halloween Costume
+                </div>
+                <div class="flex items-center gap-2 pr-2">
+                  <i class="fa-solid fa-eye"></i><span>1,568</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      </div>
     </section>
+
+
 
 
 
