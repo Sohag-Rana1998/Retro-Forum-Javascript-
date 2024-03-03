@@ -115,7 +115,8 @@
 
 
   <main class="px-5 lg:px-20 mx-auto">
-    <section class="w-full  mt-20 mb-14">
+
+    <section id="all-post-section" class="w-full  mt-20 mb-14">
       <div class="text-center">
         <h1 class="text-black font-extrabold text-4xl font-mulish">Let’s Discuss</h1>
         <p class="text-lg text-black font-inter mt-4">Yes, you can run unit tests and view the results directly within
@@ -126,17 +127,30 @@
           streamlined .</p>
       </div>
 
+      <div id="no-result-section" class="w-full hidden text-center mt-20 mb-14">
+        <p class="font-mulish text-4xl font-bold">No Result Found.....</p>
+      </div>
+
+
+
       <div>
 
+        <div id="spiner-container" class="text-center mt-10  hidden">
+          <span class="loading loading-bars loading-lg"></span>
+        </div>
+
         <div class="flex flex-col mt-8 md:flex-row lg:flex-row  gap-5">
-          <div id="all-post-container" class="">
+
+
+
+          <div id="all-post-container" class="hidden w-full lg:w-[65%]">
             <div class="bg-[#797DFC1A] rounded-3xl">
 
             </div>
           </div>
 
 
-          <div id="category-post-container" class="hidden">
+          <div id="category-post-container" class="hidden w-full lg:w-[65%]">
             <div class="bg-[#797DFC1A] rounded-3xl">
 
             </div>
@@ -146,7 +160,7 @@
 
 
 
-          <div class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[35%]">
+          <div class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[30%]">
 
             <div>
               <div class="flex items-center justify-between mt-4 px-5">
