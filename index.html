@@ -8,7 +8,7 @@
 
 
   <link rel="stylesheet" href="./styles/style.css">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+
   <!-- Tailwind and daisy UI link -->
   <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
   <script src="https://cdn.tailwindcss.com"></script>
@@ -17,8 +17,8 @@
 
 </head>
 
-<body class="mx-auto">
-  <header class="container mx-auto">
+<body class="mx-auto container">
+  <header class="px-5 lg:px-20 mx-auto">
     <nav>
       <div class="navbar bg-base-100">
         <div class=" flex-1">
@@ -82,7 +82,7 @@
               <div class="relative">
                 <input id="search-field" class="p-3 w-full lg:w-[350px] text-inter rounded-xl text-black " type="text"
                   placeholder="Search here anything">
-                <button class="btn absolute right-0  bg-[#797DFC]">Search</button>
+                <button onclick="searchHandle()" class="btn absolute right-0  bg-[#797DFC]">Search</button>
               </div>
 
             </div>
@@ -114,7 +114,7 @@
   </header>
 
 
-  <main class="container mx-auto">
+  <main class="px-5 lg:px-20 mx-auto">
     <section class="w-full  mt-20 mb-14">
       <div class="text-center">
         <h1 class="text-black font-extrabold text-4xl font-mulish">Let’s Discuss</h1>
@@ -126,50 +126,19 @@
           streamlined .</p>
       </div>
 
-      <div id="card-container ">
+      <div>
 
         <div class="flex flex-col mt-8 md:flex-row lg:flex-row  gap-5">
-          <div class="bg-[#797DFC1A] rounded-3xl">
-            <div class="flex p-10 gap-10">
-              <div class="avatar relative">
-                <div class="w-4 h-4 absolute top-[-4px] right-[-4px]  bg-green-600 rounded-full"></div>
-                <div class="w-20 h-20 rounded-xl">
-                  <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
-              </div>
-              <div>
-                <div class="flex justify-start  gap-5 font-medium font-inter">
-                  <div>
-                    # Music
-                  </div>
-                  <div><span>Author :</span>
-                    Awlad Hossain
-                  </div>
-                </div>
-                <div class="font-mulish my-3 text-left font-bold text-xl">10 Kids Unaware of Their Halloween Costume
-                </div>
-                <p class="font-inter">It’s one thing to subject yourself to ha Halloween costume mishap because, hey
-                  that’s your prerogative</p>
-                <hr class="border-dashed border-[2px]  my-3">
-                <div class="flex mt-3 justify-between items-center">
-                  <div class="flex gap-4 justify-around">
-                    <div>
-                      <i class="fa-regular fa-message"></i> <span>560</span>
-                    </div>
-                    <div>
-                      <i class="fa-solid fa-eye"></i><span>1,568</span>
-                    </div>
-                    <div>
-                      <i class="fa-regular fa-clock"></i> <span>5 min</span>
-                    </div>
-                  </div>
-                  <div>
-                    <button class="py-1 px-2 rounded-full bg-green-600"><i class="fa-solid fa-envelope"></i></button>
-                  </div>
+          <div id="all-post-container" class="">
+            <div class="bg-[#797DFC1A] rounded-3xl">
 
-                </div>
+            </div>
+          </div>
 
-              </div>
+
+          <div id="category-post-container" class="hidden">
+            <div class="bg-[#797DFC1A] rounded-3xl">
+
             </div>
           </div>
 
@@ -177,31 +146,24 @@
 
 
 
+          <div class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[35%]">
 
-          <div id="readed-card-container" class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[35%]">
+            <div>
+              <div class="flex items-center justify-between mt-4 px-5">
+                <div class="font-mulish my-3 text-left font-bold text-xl">Title</div>
 
+                <div><i class="fa-solid fa-check-double text-green-700"></i>
+                  Mark as read: <span id="read-count"></span>
+                </div>
 
-            <div class="flex items-center justify-between mt-4 px-3">
-              <div class="font-mulish my-3 text-left font-bold text-xl">Title</div>
-
-              <div><i class="fa-solid fa-check-double"></i>
-                Mark as read <span>(4)</span>
               </div>
+              <div id="readed-post-container">
 
-            </div>
-            <div class="px-3">
-              <div class="flex my-4  mx-auto rounded-xl pl-2 py-2 justify-between bg-white">
-                <div class="font-mulish my-3 text-left font-bold text-xl">10 Kids Unaware of Their Halloween Costume
-                </div>
-                <div class="flex items-center gap-2 pr-2">
-                  <i class="fa-solid fa-eye"></i><span>1,568</span>
-                </div>
               </div>
             </div>
           </div>
+
         </div>
-
-      </div>
       </div>
     </section>
 
@@ -237,87 +199,11 @@
 
       <!-- Latest post Container -->
 
-      <div id="latest-post-container " class="mt-8 lg:mt-20 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div id="latest-post-container" class="mt-8 lg:mt-20 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
 
 
-        <div class="card w-full bg-base-100 shadow-xl p-3 lg:p-10">
-          <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
-          <div class="card-body">
-            <p class=" font-inter">29 January 2024</p>
-            <h2 class="card-title font-mulish my-4">What will a mars habitat force that impact in our daily life!!!
-            </h2>
-            <p class="text-lg font-inter font-medium">Yes, you can run unit tests and view the results directly within
-              the app.</p>
-            <div class="avatar my-5 flex gap-5">
-              <div class="w-14 h-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-              <div>
-                <div class="font-bold font-mulish">
-                  Cameron Williamson
-                </div>
-                <div class="font-inter">
-                  Unknown
-                </div>
-              </div>
 
-            </div>
-          </div>
-        </div>
-
-
-        <div class="card w-full bg-base-100 p-3 lg:p-10 shadow-xl">
-          <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
-          <div class="card-body">
-            <p class=" font-inter">29 January 2024</p>
-            <h2 class="card-title font-mulish my-4">What will a mars habitat force that impact in our daily life!!!
-            </h2>
-            <p class="text-lg font-inter font-medium">Yes, you can run unit tests and view the results directly within
-              the app.</p>
-            <div class="avatar my-5 flex gap-5">
-              <div class="w-14 h-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-              <div>
-                <div class="font-bold font-mulish">
-                  Cameron Williamson
-                </div>
-                <div class="font-inter">
-                  Unknown
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-        <div class="card w-full p-3 lg:p-10 bg-base-100 shadow-xl">
-          <figure><img src="https://daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg" alt="Shoes" />
-          </figure>
-          <div class="card-body">
-            <p class=" font-inter">29 January 2024</p>
-            <h2 class="card-title font-mulish my-4">What will a mars habitat force that impact in our daily life!!!
-            </h2>
-            <p class="text-lg font-inter font-medium">Yes, you can run unit tests and view the results directly within
-              the app.</p>
-            <div class="avatar my-5 flex gap-5">
-              <div class="w-14 h-14 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src="https://daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-              </div>
-              <div>
-                <div class="font-bold font-mulish">
-                  Cameron Williamson
-                </div>
-                <div class="font-inter">
-                  Unknown
-                </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
 
 
 
