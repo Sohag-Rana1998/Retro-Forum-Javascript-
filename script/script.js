@@ -76,7 +76,8 @@ const displayLatestPosts = (posts) => {
 
 const displayPosts = (posts) => {
   // console.log(posts);
-
+  allPostContainer.classList.remove('hidden');
+  categoryPostContainer.classList.add('hidden');
 
   posts.forEach(post => {
 
@@ -205,8 +206,10 @@ const searchByCategory = async (category) => {
 }
 
 const searchHandle = () => {
-  const inputField = document.getElementById('input-field');
-  const inputText = inputField.value;
+  const inputField = document.getElementById('search-field');
+  const inputText = inputField.value.toLowerCase();
+
+  console.log(inputText);
   allPostContainer.classList.add('hidden');
   categoryPostContainer.classList.remove('hidden');
   searchByCategory(inputText);
