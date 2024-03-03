@@ -102,17 +102,17 @@ const displayPosts = (posts) => {
 
     if (post.isActive) {
       postCard.innerHTML = `
-     <div class="flex p-10 gap-10">
-     <div id="showActive">
+     <div class="flex flex-col lg:flex-row p-10 gap-6">
+     
      <div class="avatar relative">
                   <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
-                </div>
+             
                 
-                <div>
+               <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
                     <div>
                       # ${post.category}
@@ -138,7 +138,7 @@ const displayPosts = (posts) => {
                       </div>
                     </div>
                     <div>
-                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read py-1 px-2 rounded-full bg-green-600"><i
+                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read text-white py-1 px-2 rounded-full bg-green-400"><i
                           class="fa-solid fa-envelope"></i></button>
                     </div>
 
@@ -152,17 +152,17 @@ const displayPosts = (posts) => {
     }
     else {
       postCard.innerHTML = `
-     <div class="flex p-10 gap-10">
-     <div id="showActive">
+     <div class="flex flex-col lg:flex-row p-10 gap-6">
+     
      <div class="avatar relative">
                   <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
-                </div>
+               
                 
-                <div>
+               <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
                     <div>
                       # ${post.category}
@@ -188,7 +188,7 @@ const displayPosts = (posts) => {
                       </div>
                     </div>
                     <div>
-                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read py-1 px-2 rounded-full bg-green-600"><i
+                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read text-white py-1 px-2 rounded-full bg-green-400"><i
                           class="fa-solid fa-envelope"></i></button>
                     </div>
 
@@ -238,16 +238,16 @@ const DisplayBySearch = async (category) => {
     if (post.isActive) {
       categoryPostCard.innerHTML = `
      <div class="flex p-10 gap-10">
-     <div id="showActive">
+    
      <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+                  <div id="status" class="w-4 h-4 bg-green-600  absolute top-0 lg:top-[-4px]   lg:right-[-4px]  rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
-                </div>
                 
-                <div>
+                
+                <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
                     <div>
                       # ${post.category}
@@ -273,7 +273,7 @@ const DisplayBySearch = async (category) => {
                       </div>
                     </div>
                     <div>
-                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read py-1 px-2 rounded-full bg-green-600"><i
+                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read text-white py-1 px-2 rounded-full bg-green-400"><i
                           class="fa-solid fa-envelope"></i></button>
                     </div>
 
@@ -297,7 +297,7 @@ const DisplayBySearch = async (category) => {
                 </div>
                 </div>
                 
-                <div>
+                <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
                     <div>
                       # ${post.category}
@@ -323,7 +323,7 @@ const DisplayBySearch = async (category) => {
                       </div>
                     </div>
                     <div>
-                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read py-1 px-2 rounded-full bg-green-600"><i
+                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read text-white py-1 px-2 rounded-full bg-green-400"><i
                           class="fa-solid fa-envelope"></i></button>
                     </div>
 
@@ -361,7 +361,7 @@ const searchHandle = () => {
 
 
 
-/**                Set---        Mark ---As--Read                 */
+/**                Set--- Mark ---As--Read                 */
 
 
 

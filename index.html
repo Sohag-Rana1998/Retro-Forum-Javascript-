@@ -15,15 +15,36 @@
   <!-- Font Awesome -->
   <script src="https://kit.fontawesome.com/355d7f7ac4.js" crossorigin="anonymous"></script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
+    rel="stylesheet">
+
+  <style>
+    .font-mulish {
+      font-family: "Mulish", sans-serif;
+    }
+
+    .font-inter {
+      font-family: "Inter", sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+
 </head>
 
-<body class="mx-auto max-w-[1440px]">
-  <header class="px-20 mx-auto">
+<body class="mx-auto">
+  <header class=" mx-auto">
 
     <!-- This is Navber -->
 
     <nav>
-      <div class="navbar bg-base-100">
+      <div class="navbar px-0 bg-base-100">
         <div class=" flex-1">
           <div class="dropdown">
             <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
@@ -74,54 +95,58 @@
 
 
     <div class="container  mx-auto mt-14  ">
-      <div class=" rounded-3xl bg-gradient-to-r from-slate-900 to-gray-700 lg:h-[550px]">
-        <div class=" h-full bg-no-repeat bg-cover bg-center bg-[url(./images/bgbanner.png)]">
-          <div class="flex flex-col lg:flex-row justify-between items-center h-full px-5 lg:px-24">
-            <div class="text-white mt-5 lg:mt-0">
-              <h1 class="text-4xl lg:text-6xl text-white text-center lg:text-left font-extrabold font-munish">Welcome to
-                the <br>
-                <span class="text-indigo-500">ReTro</span>
-                Forum
-              </h1>
-              <p class="py-12 text-center lg:text-left text-lg font-inter font-inter"> Share your favorite opinion and
-                win and wp <br> forum
-                coffee mug!</p>
+      <div class="px-0">
+        <div class=" rounded-3xl bg-gradient-to-r from-slate-900 to-gray-700 lg:h-[550px]">
+          <div class=" h-full  bg-no-repeat bg-cover bg-center bg-[url(./images/bgbanner.png)]">
+            <div class="flex flex-col lg:flex-row justify-between items-center h-full px-5 lg:px-24">
+              <div class="text-white mt-5 lg:mt-0">
+                <h1 class="text-4xl lg:text-6xl text-white text-center lg:text-left font-extrabold font-munish">Welcome
+                  to
+                  the <br>
+                  <span class="text-indigo-500">ReTro</span>
+                  Forum
+                </h1>
+                <p class="py-12 text-center lg:text-left text-lg font-inter font-inter"> Share your favorite opinion and
+                  win and wp <br> forum
+                  coffee mug!</p>
 
-              <div class="relative mx-auto lg:ml-0  lg:w-full px-5 lg:px-0">
-                <input id="search-field" class="p-3  w-full  font-inter rounded-xl text-black " type="text"
-                  placeholder="Search here anything">
-                <div class="absolute right-0  top-0">
-                  <a href="#all-post-section"><button onclick="searchHandle()"
-                      class="btn  bg-[#797DFC]">Search</button></a>
+                <div class="relative mx-auto w-fulls ">
+                  <input id="search-field" class="p-3  w-full  font-inter rounded-xl text-black " type="text"
+                    placeholder="Search here anything">
+                  <div class="absolute right-0  top-0">
+                    <a href="#all-post-section"><button onclick="searchHandle()"
+                        class="btn  bg-[#797DFC]">Search</button></a>
+                  </div>
+
                 </div>
 
               </div>
+              <div class="bg-white  w-full mx-auto lg:w-80 my-5 h-60  rounded-3xl">
+                <ul>
+                  <div class="flex justify-between items-center px-3 lg:px-8 pt-8">
+                    <li>Registered Users</li>
+                    <li>01</li>
+                  </div>
+                  <div class="flex justify-between items-center px-3 lg:px-8 py-2 lg:py-4">
+                    <li>Forum</li>
+                    <li>05</li>
+                  </div>
+                  <div class="flex justify-between items-center px-3 lg:px-8 py-2 lg:py-4">
+                    <li>Topics</li>
+                    <li>01</li>
+                  </div>
+                  <div class="flex justify-between items-center px-3 lg:px-8 py-2 lg:py-4">
+                    <li>Replies</li>
+                    <li>01</li>
+                  </div>
 
-            </div>
-            <div class="bg-white  w-[70%] mx-auto lg:w-80 my-5 h-60  rounded-3xl">
-              <ul>
-                <div class="flex justify-between items-center px-3 lg:px-8 pt-8">
-                  <li>Registered Users</li>
-                  <li>01</li>
-                </div>
-                <div class="flex justify-between items-center px-3 lg:px-8 py-2 lg:py-4">
-                  <li>Forum</li>
-                  <li>05</li>
-                </div>
-                <div class="flex justify-between items-center px-3 lg:px-8 py-2 lg:py-4">
-                  <li>Topics</li>
-                  <li>01</li>
-                </div>
-                <div class="flex justify-between items-center px-3 lg:px-8 py-2 lg:py-4">
-                  <li>Replies</li>
-                  <li>01</li>
-                </div>
-
-              </ul>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </header>
 
@@ -129,10 +154,10 @@
   <!-- Main section Start -->
 
 
-  <main class="px-20 mx-auto">
+  <main class="">
 
-    <section id="all-post-section" class="w-full  mt-20 mb-14">
-      <div class="text-center">
+    <section id="all-post-section" class="w-full container  mx-auto  mt-20 mb-14">
+      <div class="text-center px-0">
         <h1 class="text-black font-extrabold text-4xl font-mulish">Let’s Discuss</h1>
         <p class="text-lg text-black font-inter mt-4">Yes, you can run unit tests and view the results directly within
           the
@@ -142,43 +167,43 @@
           streamlined .</p>
       </div>
 
-      <div id="no-result-section" class="w-full hidden text-center mt-20 mb-14">
+      <div id="no-result-section" class="w-full px-0 hidden text-center mt-20 mb-14">
         <p class="font-mulish text-4xl font-bold">No Result Found.....</p>
       </div>
 
+      <div id="spiner-container" class="text-center px-0 mt-10  hidden">
+        <span class="loading loading-bars loading-lg"></span>
+      </div>
 
 
-      <div>
+      <div class="px-0">
 
-        <div id="spiner-container" class="text-center mt-10  hidden">
-          <span class="loading loading-bars loading-lg"></span>
-        </div>
-
-        <div class="flex flex-col mt-8 md:flex-row lg:flex-row  gap-5">
+        <div class="flex flex-col justify-between items-start mt-8 md:flex-row lg:flex-row  gap-5">
 
 
 
-          <div id="all-post-container" class="hidden w-full lg:w-[65%]">
+          <div id="all-post-container" class="hidden  w-full">
             <div class="bg-[#797DFC1A] rounded-3xl">
 
+            </div>
+            <div id="category-post-container" class="hidden w-full">
+              <div class="bg-[#797DFC1A] rounded-3xl">
+
+              </div>
             </div>
           </div>
 
 
-          <div id="category-post-container" class="hidden w-full lg:w-[65%]">
-            <div class="bg-[#797DFC1A] rounded-3xl">
-
-            </div>
-          </div>
 
 
 
 
 
-          <div class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[30%]">
+
+          <div class=" bg-[#797DFC1A] rounded-3xl  w-full lg:w-[50%]">
 
             <div>
-              <div class="flex items-center justify-between mt-4 px-5">
+              <div class="flex items-center justify-between my-8 px-5">
                 <div class="font-mulish my-3 text-left font-bold text-xl">Title</div>
 
                 <div><i class="fa-solid fa-check-double text-green-700"></i>
@@ -196,30 +221,34 @@
       </div>
     </section>
 
-    <section class="container mx-auto">
-      <div class="bg-[#12132D] rounded-3xl p-5 lg:p-20">
-        <div class="flex gap-5 flex-col md:flex-row lg:flex-row justify-between items-center  ">
-          <div>
-            <h1 class="text-4xl my-5 font-extrabold font-mulish text-white">
-              Join Our Forum
-            </h1>
-            <p class="text-lg font-medium font-inter text-white">
-              Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view the
-              results directly
-              within the app.
-            </p>
-            <button class="btn my-5 bg-[#797DFC]">Registered Now</button>
-          </div>
-          <div>
-            <img src="./images/joinforum.png" alt="">
+    <section class="container  mx-auto">
+      <div class="px-0">
+        <div class="bg-[#12132D] rounded-3xl px-5 lg:px-24 py-5 lg:py-24">
+          <div class="flex gap-5 flex-col md:flex-row lg:flex-row justify-between items-center  ">
+            <div class="text-center lg:text-left">
+              <h1 class="text-4xl my-5 font-extrabold font-mulish text-white">
+                Join Our Forum
+              </h1>
+              <p class="text-lg font-medium font-inter text-white">
+                Share your favorite opinion and win and wp forum coffee mug! Yes, you can <br> run unit tests and view
+                the
+                results directly
+                within the app.
+              </p>
+              <button class="btn my-5 bg-[#797DFC]">Registered Now</button>
+            </div>
+            <div>
+              <img src="./images/joinforum.png" alt="">
+            </div>
           </div>
         </div>
       </div>
+
     </section>
 
 
-    <section class="container mt-10 mb-8 lg:mt-20 lg:mb-14 mx-auto">
-      <div class="text-center">
+    <section class="container  mt-10 mb-8 lg:mt-20 lg:mb-14 mx-auto">
+      <div class="text-center px-0">
         <h1 class="text-black font-extrabold text-4xl font-mulish">Latest Posts</h1>
         <p class="text-lg text-black font-inter mt-4">Yes, you can run unit tests and view the results directly within
           the app. The <br> integrated testing features allow for a
@@ -228,7 +257,7 @@
 
       <!-- Latest post Container -->
 
-      <div id="latest-post-container" class="mt-8 lg:mt-20 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+      <div id="latest-post-container" class="mt-8 px-0 lg:mt-20 grid gap-5 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
 
 
 
@@ -246,31 +275,31 @@
     </section>
 
   </main>
-
-
   <footer
-    class="bg-gray-400 flex flex-col justify-center items-center text-center py-10 px-5 lg:py-24 w-[100%] max-w- mx-auto">
-    <div>
-      <h1 class="text-4xl mt-5 lg:mt-08 font-extrabold font-mulish">
-        ReTro
-      </h1>
-      <p class="font-inter mt-5 lg:mt-8">
-        Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
-        literature
-        from 45 BC
-      </p>
-      <div class="mt-5 lg:mt-8">
-        <i class="fa-brands fa-twitter mr-5"></i>
-        <i class="fa-brands fa-facebook-f mr-5"></i>
-        <i class="fa-brands fa-instagram mr-5"></i>
-        <i class="fa-brands fa-github mr-5"></i>
-      </div>
-      <hr class="mt-5 lg:my-12">
-      <p class="mt-5 lg:mt-8">2017, All Rights Reserved.</p>
+    class="footer text-center flex  flex-col justify-center items-center  py-10  px-0  lg:py-24 p-10 bg-base-300 text-base-content">
 
-
+    <h1 class="text-4xl lg:text-6xl mt-5 lg:mt-08 font-extrabold font-mulish">
+      ReTro
+    </h1>
+    <p class="font-inter mt-5 lg:mt-8">
+      Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
+      literature
+      from 45 BC
+    </p>
+    <div class="mt-5 flex items-center lg:mt-8">
+      <i class="fa-brands fa-twitter text-4xl mr-5"></i>
+      <i class="fa-brands fa-facebook-f text-4xl mr-5"></i>
+      <i class="fa-brands fa-instagram text-4xl mr-5"></i>
+      <i class="fa-brands fa-github text-4xl mr-5"></i>
     </div>
+
+
+    <hr class="border-gray-700 border-2 container mx-auto border-dashed">
+
+
+    <p class="mt-5 lg:mt-8">2017, All Rights Reserved.</p>
   </footer>
+
   <script src="./script/script.js"></script>
 </body>
 
