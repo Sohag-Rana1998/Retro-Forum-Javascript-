@@ -105,7 +105,7 @@ const displayPosts = (posts) => {
      <div class="flex flex-col lg:flex-row p-10 gap-6">
      
      <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+                  <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] left-[70px] lg:top-[-4px] lg:right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
@@ -114,11 +114,13 @@ const displayPosts = (posts) => {
                 
                <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
+                    <div class="flex flex-col gap-2 lg:gap-5 lg:flex-row">
                     <div>
                       # ${post.category}
                     </div>
                     <div><span>Author :</span>
                       ${post?.author?.name || 'Unknown'}
+                    </div>
                     </div>
                   </div>
                   <div class="font-mulish my-3 text-left font-bold text-xl">${post.title}
@@ -155,7 +157,7 @@ const displayPosts = (posts) => {
      <div class="flex flex-col lg:flex-row p-10 gap-6">
      
      <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] left-[70px] lg:top-[-4px] lg:right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
@@ -164,11 +166,13 @@ const displayPosts = (posts) => {
                 
                <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
+                    <div class="flex flex-col gap-2 lg:gap-5 lg:flex-row">
                     <div>
                       # ${post.category}
                     </div>
                     <div><span>Author :</span>
                       ${post?.author?.name || 'Unknown'}
+                    </div>
                     </div>
                   </div>
                   <div class="font-mulish my-3 text-left font-bold text-xl">${post.title}
@@ -237,23 +241,25 @@ const DisplayBySearch = async (category) => {
 
     if (post.isActive) {
       categoryPostCard.innerHTML = `
-     <div class="flex p-10 gap-10">
-    
+     <div class="flex flex-col lg:flex-row p-10 gap-6">
+     
      <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-green-600  absolute top-0 lg:top-[-4px]   lg:right-[-4px]  rounded-full"></div>
+                  <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] left-[70px] lg:top-[-4px] lg:right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
+               
                 
-                
-                <div class="w-full">
-                  <div class="flex justify-start  gap-5 font-medium font-inter">
+               <div class="w-full">
+                  <div class="flex justify-start gap-5 font-medium font-inter">
+                    <div class="flex flex-col gap-2 lg:gap-5 lg:flex-row">
                     <div>
                       # ${post.category}
                     </div>
                     <div><span>Author :</span>
                       ${post?.author?.name || 'Unknown'}
+                    </div>
                     </div>
                   </div>
                   <div class="font-mulish my-3 text-left font-bold text-xl">${post.title}
@@ -287,23 +293,25 @@ const DisplayBySearch = async (category) => {
     }
     else {
       categoryPostCard.innerHTML = `
-     <div class="flex p-10 gap-10">
-     <div id="showActive">
+     <div class="flex flex-col lg:flex-row p-10 gap-6">
+     
      <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] left-[70px] lg:top-[-4px] lg:right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
-                </div>
+               
                 
-                <div class="w-full">
+               <div class="w-full">
                   <div class="flex justify-start  gap-5 font-medium font-inter">
+                    <div class="flex flex-col gap-2 lg:gap-5 lg:flex-row">
                     <div>
                       # ${post.category}
                     </div>
                     <div><span>Author :</span>
                       ${post?.author?.name || 'Unknown'}
+                    </div>
                     </div>
                   </div>
                   <div class="font-mulish my-3 text-left font-bold text-xl">${post.title}
