@@ -1,13 +1,15 @@
 const allPostContainer = document.getElementById('all-post-container');
-
 const categoryPostContainer = document.getElementById('category-post-container');
-
-
 const markPostContainer = document.getElementById('readed-post-container');
-
 const spinner = document.getElementById('spiner-container');
 
 
+const setStatus = document.getElementById('showActive');
+
+
+
+
+/**                         Load all post                  */
 
 
 const loadPostData = async () => {
@@ -19,6 +21,11 @@ const loadPostData = async () => {
   setTimeout(displayPosts, 2000, posts)
 }
 
+
+
+/**                         Load Category post  by Search                */
+
+
 const loadLatestPostData = async () => {
   const response = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts');
 
@@ -26,6 +33,10 @@ const loadLatestPostData = async () => {
 
   displayLatestPosts(data);
 }
+
+
+/**                         Display Latest post                 */
+
 
 
 const displayLatestPosts = (posts) => {
@@ -74,6 +85,7 @@ const displayLatestPosts = (posts) => {
 
 
 
+/**                         Display All post                 */
 
 
 
@@ -88,14 +100,18 @@ const displayPosts = (posts) => {
     const postCard = document.createElement('div');
     postCard.classList = "bg-[#797DFC1A] rounded-3xl mb-10";
 
-    postCard.innerHTML = `
+    if (post.isActive) {
+      postCard.innerHTML = `
      <div class="flex p-10 gap-10">
-                <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+     <div id="showActive">
+     <div class="avatar relative">
+                  <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
+                </div>
+                
                 <div>
                   <div class="flex justify-start  gap-5 font-medium font-inter">
                     <div>
@@ -133,42 +149,104 @@ const displayPosts = (posts) => {
     `;
 
 
+    }
+    else {
+      postCard.innerHTML = `
+     <div class="flex p-10 gap-10">
+     <div id="showActive">
+     <div class="avatar relative">
+                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+                  <div class="w-20 h-20 rounded-xl">
+                    <img src="${post.image}" />
+                  </div>
+                </div>
+                </div>
+                
+                <div>
+                  <div class="flex justify-start  gap-5 font-medium font-inter">
+                    <div>
+                      # ${post.category}
+                    </div>
+                    <div><span>Author :</span>
+                      ${post?.author?.name || 'Unknown'}
+                    </div>
+                  </div>
+                  <div class="font-mulish my-3 text-left font-bold text-xl">${post.title}
+                  </div>
+                  <p class="font-inter">${post.description}</p>
+                  <hr class="border-dashed border-[2px]  my-3">
+                  <div class="flex mt-3 justify-between items-center">
+                    <div class="flex gap-4 justify-around">
+                      <div>
+                        <i class="fa-regular fa-message"></i> <span>${post.comment_count}</span>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-eye"></i><span>${post.view_count}</span>
+                      </div>
+                      <div>
+                        <i class="fa-regular fa-clock"></i> <span>${post.posted_time} min</span>
+                      </div>
+                    </div>
+                    <div>
+                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read py-1 px-2 rounded-full bg-green-600"><i
+                          class="fa-solid fa-envelope"></i></button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+    `;
+    }
+
     allPostContainer.appendChild(postCard);
+
+
   });
+
   spinner.classList.add('hidden');
 }
 
 
-const searchByCategory = async (category) => {
+
+
+/**                         DisplayBySearch                 */
+
+
+
+
+const DisplayBySearch = async (category) => {
 
   const response = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`);
 
   const data = await response.json();
   const posts = data.posts
   console.log(posts);
+  categoryPostContainer.innerHTML = '';
   const noResult = document.getElementById('no-result-section');
-
   noResult.classList.add('hidden');
-
 
   if (posts.length === 0) {
     noResult.classList.remove('hidden');
-
   }
 
   posts.forEach(post => {
-
     const categoryPostCard = document.createElement('div');
     categoryPostCard.classList = "bg-[#797DFC1A] rounded-3xl mb-10";
 
-    categoryPostCard.innerHTML = `
+
+    if (post.isActive) {
+      categoryPostCard.innerHTML = `
      <div class="flex p-10 gap-10">
-                <div class="avatar relative">
-                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+     <div id="showActive">
+     <div class="avatar relative">
+                  <div id="status" class="w-4 h-4 bg-green-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
                   <div class="w-20 h-20 rounded-xl">
                     <img src="${post.image}" />
                   </div>
                 </div>
+                </div>
+                
                 <div>
                   <div class="flex justify-start  gap-5 font-medium font-inter">
                     <div>
@@ -205,25 +283,85 @@ const searchByCategory = async (category) => {
               </div>
     `;
 
+
+    }
+    else {
+      categoryPostCard.innerHTML = `
+     <div class="flex p-10 gap-10">
+     <div id="showActive">
+     <div class="avatar relative">
+                  <div id="status" class="w-4 h-4 bg-red-600 absolute top-[-4px] right-[-4px]   rounded-full"></div>
+                  <div class="w-20 h-20 rounded-xl">
+                    <img src="${post.image}" />
+                  </div>
+                </div>
+                </div>
+                
+                <div>
+                  <div class="flex justify-start  gap-5 font-medium font-inter">
+                    <div>
+                      # ${post.category}
+                    </div>
+                    <div><span>Author :</span>
+                      ${post?.author?.name || 'Unknown'}
+                    </div>
+                  </div>
+                  <div class="font-mulish my-3 text-left font-bold text-xl">${post.title}
+                  </div>
+                  <p class="font-inter">${post.description}</p>
+                  <hr class="border-dashed border-[2px]  my-3">
+                  <div class="flex mt-3 justify-between items-center">
+                    <div class="flex gap-4 justify-around">
+                      <div>
+                        <i class="fa-regular fa-message"></i> <span>${post.comment_count}</span>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-eye"></i><span>${post.view_count}</span>
+                      </div>
+                      <div>
+                        <i class="fa-regular fa-clock"></i> <span>${post.posted_time} min</span>
+                      </div>
+                    </div>
+                    <div>
+                      <button onclick="markAsRead(&#34 ${post.title} &#34, '${post.view_count}')" id="mark-as-read" class="mark-read py-1 px-2 rounded-full bg-green-600"><i
+                          class="fa-solid fa-envelope"></i></button>
+                    </div>
+
+                  </div>
+
+                </div>
+              </div>
+    `;
+    }
+
     categoryPostContainer.appendChild(categoryPostCard);
   })
 
 }
 
+/**                        Search by category Button Handle                 */
+
+
+
 const searchHandle = () => {
   const inputField = document.getElementById('search-field');
   const inputText = inputField.value.toLowerCase();
 
+  if (inputText.length === 0) {
+    alert('Please type something for search');
+  }
+
   console.log(inputText);
   allPostContainer.classList.add('hidden');
   categoryPostContainer.classList.remove('hidden');
-  searchByCategory(inputText);
+  DisplayBySearch(inputText);
 }
 
 
 
 
 
+/**                Set---        Mark ---As--Read                 */
 
 
 
@@ -242,6 +380,11 @@ const markAsRead = (title, view) => {
   markPostContainer.appendChild(mark);
   readCount();
 }
+
+
+
+
+/**                           Get--- Count                 */
 
 
 let count = 0;
