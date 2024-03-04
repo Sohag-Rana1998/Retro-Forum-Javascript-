@@ -368,6 +368,20 @@ const searchHandle = () => {
 }
 
 
+const searchHandle2 = () => {
+  const inputField2 = document.getElementById('search-field2');
+  const inputText2 = inputField2.value.toLowerCase();
+
+  if (inputText2.length === 0) {
+    alert('Please type something for search');
+  }
+
+  spinner.classList.remove('hidden');
+  allPostContainer.classList.add('hidden');
+  categoryPostContainer.classList.remove('hidden');
+  noResult.classList.add('hidden');
+  setTimeout(DisplayBySearch, 2000, inputText2);
+}
 
 
 
